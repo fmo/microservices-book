@@ -74,7 +74,7 @@ func (a Adapter) Get(ctx context.Context, id int64) (domain.Order, error) {
 	}
 	order := domain.Order{
 		ID:         int64(orderEntity.ID),
-		CustomerID: orderEntity.customerID,
+		CustomerID: orderEntity.CustomerID,
 		Status:     orderEntity.Status,
 		OrderItems: orderItems,
 		CreatedAt:  orderEntity.CreatedAt.UnixNano(),

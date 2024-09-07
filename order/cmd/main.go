@@ -5,6 +5,7 @@ import (
 	"github.com/fmo/microservices-book/order/internal/adapters/db"
 	"github.com/fmo/microservices-book/order/internal/adapters/grpc"
 	"github.com/fmo/microservices-book/order/internal/application/core/api"
+	"github.com/joho/godotenv"
 	log "github.com/sirupsen/logrus"
 	"os"
 )
@@ -21,17 +22,26 @@ func init() {
 }
 
 func main() {
+	environment := os.Getenv("ENVIRONMENT")
+	if environment != "production" {
+		err := godotenv.Load()
+		if err != nil {
+			log.Fatal("Error loading .env file")
+		}
+	}
+
 	dbAdapter, err := db.NewAdapter(config.GetDataSourceURL())
 	if err != nil {
 		log.Fatalf("Failed to connect to database. Error: %v", err)
 	}
 
-	paymentAdapter, err := payment.NewAdapter(config.GetPaymentServiceUrl())
-	if err != nil {
-		log.Fatalf("Failed to initialize payment stub. Error: %v", err)
-	}
+	//paymentAdapter, err := payment.NewAdapter(config.GetPaymentServiceUrl())
+	//if err != nil {
+	//	log.Fatalf("Failed to initialize payment stub. Error: %v", err)
+	//}
 
-	application := api.NewApplication(dbAdapter, paymentAdapter)
+	//application := api.NewApplication(dbAdapter, paymentAdapter)
+	application := api.NewApplication(dbAdapter)
 	grpcAdapter := grpc.NewAdapter(application, config.GetApplicationPort())
 	grpcAdapter.Run()
 }
