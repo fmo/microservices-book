@@ -4,6 +4,8 @@ github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fmo/microservices-proto/golang/order v0.0.17 h1:/BnB2X9YqQVZzBfUwCnjOVffNczvF9CeybpDxgdljSg=
 github.com/fmo/microservices-proto/golang/order v0.0.17/go.mod h1:HlZemOl42eBGK2GWAy07C3vrwPeIhiv6klkOvN84cCQ=
+github.com/fmo/microservices-proto/golang/payment v0.0.17 h1:3Yoa0fNb5C84RcGk5+NJNxmgBuf7TSXeWli8bKv2aDc=
+github.com/fmo/microservices-proto/golang/payment v0.0.17/go.mod h1:AQecKQygDZSxCCAjjgK05Rr01YcWhplphsmAedftR5Q=
 github.com/go-sql-driver/mysql v1.7.0/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
 github.com/go-sql-driver/mysql v1.8.1 h1:LedoTUt/eveggdHS9qUFC1EFSa8bU2+1pZjSRpvNJ1Y=
 github.com/go-sql-driver/mysql v1.8.1/go.mod h1:wEBSXgmK//2ZFJyE+qWnIsVGmvmEKlqwuVSjsCm7DZg=
