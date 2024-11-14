@@ -1,6 +1,6 @@
 module github.com/fmo/microservices-book/payment
 
-go 1.22.5
+go 1.23
 
 require (
 	github.com/fmo/microservices-proto/golang/payment v0.0.17 // indirect

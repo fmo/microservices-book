@@ -1,6 +1,6 @@
 module github.com/fmo/microservices-book/order
 
-go 1.22.5
+go 1.23
 
 require (
 	github.com/docker/go-connections v0.5.0
