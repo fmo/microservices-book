@@ -5,6 +5,7 @@ metadata:
   labels:
     service: order
 spec:
+  type: LoadBalancer
   selector:
     service: order
   ports:
@@ -35,12 +36,13 @@ spec:
         command: ['sh', '-c', 'until nslookup mysql; do echo waiting for mysql; sleep 10; done;']
       containers:
         - name: order
-          image: order
+          image: fmo/order:1.0.0
+          imagePullPolicy: IfNotPresent
           env:
             - name: APPLICATION_PORT
               value: "8080"
             - name: ENV
-              value: "prod"
+              value: "development"
             - name: DATA_SOURCE_URL
               value: "root:s3cr3t@tcp(mysql:3306)/orders?charset=utf8mb4&parseTime=True&loc=Local"
             - name: PAYMENT_SERVICE_URL
