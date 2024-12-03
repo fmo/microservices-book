@@ -18,6 +18,7 @@ grpcurl -d '{"user_id": 123, "order_items": [{"product_code": "prod", "quantity"
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
 helm install nginx-ingress ingress-nginx/ingress-nginx
+helm uninstall ingress-nginx
 ```
 
 ## Helm Certificate Manager Install
